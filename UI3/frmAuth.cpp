@@ -42,7 +42,7 @@ int main(array<String^>^ args) {
 /// TODO:
 // 
 // (+) MVP
-// ( ) GIT Connection
+// (+) GIT Connection
 // ( ) GIT Make "Develop" branch
 // -------------------
 // ( ) Task
