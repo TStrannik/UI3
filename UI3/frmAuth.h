@@ -1,4 +1,6 @@
 #include <Windows.h>
+#include "frmSub1.h"
+#include "frmSub2.h"
 
 #pragma once
 
@@ -24,6 +26,8 @@ namespace UI3 {
 	private: CLUI::cluiTextBox^ cluiTextBox4;
 	private: CLUI::cluiTextBox^ cluiTextBox3;
 	private: CLUI::cluiTextBox^ cluiTextBox2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
 	private: System::ComponentModel::Container^ components;
 #pragma endregion Kernel
 
@@ -31,25 +35,28 @@ namespace UI3 {
 		   void InitializeComponent(void)
 		   {
 			   this->pblAuth = (gcnew System::Windows::Forms::Panel());
-			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->lblHeader = (gcnew System::Windows::Forms::Label());
+			   this->cluiTextBox4 = (gcnew CLUI::cluiTextBox());
+			   this->cluiTextBox3 = (gcnew CLUI::cluiTextBox());
+			   this->cluiTextBox2 = (gcnew CLUI::cluiTextBox());
+			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->pnlContent = (gcnew System::Windows::Forms::Panel());
 			   this->pnlBreadcrumb = (gcnew System::Windows::Forms::Panel());
-			   this->cluiTextBox2 = (gcnew CLUI::cluiTextBox());
-			   this->cluiTextBox3 = (gcnew CLUI::cluiTextBox());
-			   this->cluiTextBox4 = (gcnew CLUI::cluiTextBox());
+			   this->button3 = (gcnew System::Windows::Forms::Button());
+			   this->button2 = (gcnew System::Windows::Forms::Button());
 			   this->pblAuth->SuspendLayout();
+			   this->pnlBreadcrumb->SuspendLayout();
 			   this->SuspendLayout();
 			   // 
 			   // pblAuth
 			   // 
 			   this->pblAuth->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->pblAuth->Controls->Add(this->lblHeader);
 			   this->pblAuth->Controls->Add(this->cluiTextBox4);
 			   this->pblAuth->Controls->Add(this->cluiTextBox3);
 			   this->pblAuth->Controls->Add(this->cluiTextBox2);
 			   this->pblAuth->Controls->Add(this->button1);
-			   this->pblAuth->Controls->Add(this->lblHeader);
 			   this->pblAuth->Dock = System::Windows::Forms::DockStyle::Right;
 			   this->pblAuth->Location = System::Drawing::Point(550, 0);
 			   this->pblAuth->Name = L"pblAuth";
@@ -59,103 +66,18 @@ namespace UI3 {
 			   this->pblAuth->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseMove);
 			   this->pblAuth->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseUp);
 			   // 
-			   // button1
-			   // 
-			   this->button1->FlatAppearance->BorderSize = 0;
-			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->button1->Location = System::Drawing::Point(455, 3);
-			   this->button1->Name = L"button1";
-			   this->button1->Size = System::Drawing::Size(92, 48);
-			   this->button1->TabIndex = 2;
-			   this->button1->UseVisualStyleBackColor = true;
-			   this->button1->Click += gcnew System::EventHandler(this, &frmAuth::button1_Click);
-			   // 
 			   // lblHeader
 			   // 
 			   this->lblHeader->AutoSize = true;
 			   this->lblHeader->Font = (gcnew System::Drawing::Font(L"Tahoma", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
 			   this->lblHeader->ForeColor = System::Drawing::Color::White;
-			   this->lblHeader->Location = System::Drawing::Point(76, 104);
+			   this->lblHeader->Location = System::Drawing::Point(6, 3);
 			   this->lblHeader->Name = L"lblHeader";
-			   this->lblHeader->Size = System::Drawing::Size(393, 58);
+			   this->lblHeader->Size = System::Drawing::Size(117, 29);
 			   this->lblHeader->TabIndex = 1;
-			   this->lblHeader->Text = L"Plan your activities and control your\r\nprogress online";
+			   this->lblHeader->Text = L"First form";
 			   this->lblHeader->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			   // 
-			   // pnlContent
-			   // 
-			   this->pnlContent->Dock = System::Windows::Forms::DockStyle::Fill;
-			   this->pnlContent->Location = System::Drawing::Point(0, 0);
-			   this->pnlContent->Name = L"pnlContent";
-			   this->pnlContent->Size = System::Drawing::Size(550, 710);
-			   this->pnlContent->TabIndex = 2;
-			   // 
-			   // pnlBreadcrumb
-			   // 
-			   this->pnlBreadcrumb->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(197)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			   this->pnlBreadcrumb->Dock = System::Windows::Forms::DockStyle::Bottom;
-			   this->pnlBreadcrumb->Location = System::Drawing::Point(0, 710);
-			   this->pnlBreadcrumb->Name = L"pnlBreadcrumb";
-			   this->pnlBreadcrumb->Size = System::Drawing::Size(550, 100);
-			   this->pnlBreadcrumb->TabIndex = 2;
-			   // 
-			   // cluiTextBox2
-			   // 
-			   this->cluiTextBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
-			   this->cluiTextBox2->BorderRadius = 10;
-			   this->cluiTextBox2->ColorEnterBack = System::Drawing::Color::Tomato;
-			   this->cluiTextBox2->ColorEnterBord = System::Drawing::Color::White;
-			   this->cluiTextBox2->ColorEnterText = System::Drawing::Color::White;
-			   this->cluiTextBox2->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
-			   this->cluiTextBox2->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
-			   this->cluiTextBox2->ColorLeaveText = System::Drawing::Color::White;
-			   this->cluiTextBox2->ColorWrongBack = System::Drawing::Color::LightCoral;
-			   this->cluiTextBox2->ColorWrongBord = System::Drawing::Color::Red;
-			   this->cluiTextBox2->ColorWrongText = System::Drawing::Color::Black;
-			   this->cluiTextBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->cluiTextBox2->ForeColor = System::Drawing::Color::White;
-			   this->cluiTextBox2->Location = System::Drawing::Point(112, 283);
-			   this->cluiTextBox2->Name = L"cluiTextBox2";
-			   this->cluiTextBox2->PasswordBox = false;
-			   this->cluiTextBox2->PasswordChar = '*';
-			   this->cluiTextBox2->PlaceHolder = L"Enter your full name";
-			   this->cluiTextBox2->ShowPassword = false;
-			   this->cluiTextBox2->Size = System::Drawing::Size(320, 36);
-			   this->cluiTextBox2->TabIndex = 3;
-			   // 
-			   // cluiTextBox3
-			   // 
-			   this->cluiTextBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
-			   this->cluiTextBox3->BorderRadius = 10;
-			   this->cluiTextBox3->ColorEnterBack = System::Drawing::Color::Tomato;
-			   this->cluiTextBox3->ColorEnterBord = System::Drawing::Color::White;
-			   this->cluiTextBox3->ColorEnterText = System::Drawing::Color::White;
-			   this->cluiTextBox3->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
-			   this->cluiTextBox3->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
-			   this->cluiTextBox3->ColorLeaveText = System::Drawing::Color::White;
-			   this->cluiTextBox3->ColorWrongBack = System::Drawing::Color::LightCoral;
-			   this->cluiTextBox3->ColorWrongBord = System::Drawing::Color::Red;
-			   this->cluiTextBox3->ColorWrongText = System::Drawing::Color::Black;
-			   this->cluiTextBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->cluiTextBox3->ForeColor = System::Drawing::Color::White;
-			   this->cluiTextBox3->Location = System::Drawing::Point(112, 468);
-			   this->cluiTextBox3->Name = L"cluiTextBox3";
-			   this->cluiTextBox3->PasswordBox = false;
-			   this->cluiTextBox3->PasswordChar = '*';
-			   this->cluiTextBox3->PlaceHolder = L"Your e-mail goes here";
-			   this->cluiTextBox3->ShowPassword = false;
-			   this->cluiTextBox3->Size = System::Drawing::Size(320, 36);
-			   this->cluiTextBox3->TabIndex = 5;
 			   // 
 			   // cluiTextBox4
 			   // 
@@ -185,6 +107,113 @@ namespace UI3 {
 			   this->cluiTextBox4->Size = System::Drawing::Size(320, 36);
 			   this->cluiTextBox4->TabIndex = 7;
 			   // 
+			   // cluiTextBox3
+			   // 
+			   this->cluiTextBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox3->BorderRadius = 10;
+			   this->cluiTextBox3->ColorEnterBack = System::Drawing::Color::Tomato;
+			   this->cluiTextBox3->ColorEnterBord = System::Drawing::Color::White;
+			   this->cluiTextBox3->ColorEnterText = System::Drawing::Color::White;
+			   this->cluiTextBox3->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox3->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
+			   this->cluiTextBox3->ColorLeaveText = System::Drawing::Color::White;
+			   this->cluiTextBox3->ColorWrongBack = System::Drawing::Color::LightCoral;
+			   this->cluiTextBox3->ColorWrongBord = System::Drawing::Color::Red;
+			   this->cluiTextBox3->ColorWrongText = System::Drawing::Color::Black;
+			   this->cluiTextBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->cluiTextBox3->ForeColor = System::Drawing::Color::White;
+			   this->cluiTextBox3->Location = System::Drawing::Point(112, 468);
+			   this->cluiTextBox3->Name = L"cluiTextBox3";
+			   this->cluiTextBox3->PasswordBox = false;
+			   this->cluiTextBox3->PasswordChar = '*';
+			   this->cluiTextBox3->PlaceHolder = L"Your e-mail goes here";
+			   this->cluiTextBox3->ShowPassword = false;
+			   this->cluiTextBox3->Size = System::Drawing::Size(320, 36);
+			   this->cluiTextBox3->TabIndex = 5;
+			   // 
+			   // cluiTextBox2
+			   // 
+			   this->cluiTextBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox2->BorderRadius = 10;
+			   this->cluiTextBox2->ColorEnterBack = System::Drawing::Color::Tomato;
+			   this->cluiTextBox2->ColorEnterBord = System::Drawing::Color::White;
+			   this->cluiTextBox2->ColorEnterText = System::Drawing::Color::White;
+			   this->cluiTextBox2->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox2->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
+			   this->cluiTextBox2->ColorLeaveText = System::Drawing::Color::White;
+			   this->cluiTextBox2->ColorWrongBack = System::Drawing::Color::LightCoral;
+			   this->cluiTextBox2->ColorWrongBord = System::Drawing::Color::Red;
+			   this->cluiTextBox2->ColorWrongText = System::Drawing::Color::Black;
+			   this->cluiTextBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->cluiTextBox2->ForeColor = System::Drawing::Color::White;
+			   this->cluiTextBox2->Location = System::Drawing::Point(112, 283);
+			   this->cluiTextBox2->Name = L"cluiTextBox2";
+			   this->cluiTextBox2->PasswordBox = false;
+			   this->cluiTextBox2->PasswordChar = '*';
+			   this->cluiTextBox2->PlaceHolder = L"Enter your full name";
+			   this->cluiTextBox2->ShowPassword = false;
+			   this->cluiTextBox2->Size = System::Drawing::Size(320, 36);
+			   this->cluiTextBox2->TabIndex = 3;
+			   // 
+			   // button1
+			   // 
+			   this->button1->FlatAppearance->BorderSize = 0;
+			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->button1->Location = System::Drawing::Point(455, 3);
+			   this->button1->Name = L"button1";
+			   this->button1->Size = System::Drawing::Size(92, 48);
+			   this->button1->TabIndex = 2;
+			   this->button1->UseVisualStyleBackColor = true;
+			   this->button1->Click += gcnew System::EventHandler(this, &frmAuth::button1_Click);
+			   // 
+			   // pnlContent
+			   // 
+			   this->pnlContent->Dock = System::Windows::Forms::DockStyle::Fill;
+			   this->pnlContent->Location = System::Drawing::Point(0, 0);
+			   this->pnlContent->Name = L"pnlContent";
+			   this->pnlContent->Size = System::Drawing::Size(550, 710);
+			   this->pnlContent->TabIndex = 2;
+			   // 
+			   // pnlBreadcrumb
+			   // 
+			   this->pnlBreadcrumb->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(197)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(185)));
+			   this->pnlBreadcrumb->Controls->Add(this->button3);
+			   this->pnlBreadcrumb->Controls->Add(this->button2);
+			   this->pnlBreadcrumb->Dock = System::Windows::Forms::DockStyle::Bottom;
+			   this->pnlBreadcrumb->Location = System::Drawing::Point(0, 710);
+			   this->pnlBreadcrumb->Name = L"pnlBreadcrumb";
+			   this->pnlBreadcrumb->Size = System::Drawing::Size(550, 100);
+			   this->pnlBreadcrumb->TabIndex = 2;
+			   // 
+			   // button3
+			   // 
+			   this->button3->Location = System::Drawing::Point(189, 29);
+			   this->button3->Name = L"button3";
+			   this->button3->Size = System::Drawing::Size(37, 35);
+			   this->button3->TabIndex = 1;
+			   this->button3->Text = L"button3";
+			   this->button3->UseVisualStyleBackColor = true;
+			   this->button3->Click += gcnew System::EventHandler(this, &frmAuth::button3_Click);
+			   // 
+			   // button2
+			   // 
+			   this->button2->Location = System::Drawing::Point(136, 29);
+			   this->button2->Name = L"button2";
+			   this->button2->Size = System::Drawing::Size(37, 35);
+			   this->button2->TabIndex = 0;
+			   this->button2->Text = L"button2";
+			   this->button2->UseVisualStyleBackColor = true;
+			   this->button2->Click += gcnew System::EventHandler(this, &frmAuth::button2_Click);
+			   // 
 			   // frmAuth
 			   // 
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -209,6 +238,7 @@ namespace UI3 {
 			   this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::frmAuth_MouseUp);
 			   this->pblAuth->ResumeLayout(false);
 			   this->pblAuth->PerformLayout();
+			   this->pnlBreadcrumb->ResumeLayout(false);
 			   this->ResumeLayout(false);
 
 		   }
@@ -229,6 +259,11 @@ namespace UI3 {
 	private:
 		System::Void frmAuth_Load(System::Object^ sender, System::EventArgs^ e) {
 			//
+
+			activeForm = nullptr;
+
+			//activeForm = gcnew frmSub1();
+			//OpenChildForm(activeForm, sender);
 		}
 		System::Void frmAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			System::Drawing::Drawing2D::GraphicsPath^ path = gcnew System::Drawing::Drawing2D::GraphicsPath();
@@ -282,10 +317,12 @@ namespace UI3 {
 		}
 
 		void OpenChildForm(Form^ childForm, System::Object^ btnSender) {
-			if (ActiveForm != nullptr) {
-				ActiveForm->Close();
-			}
+			
+			if (activeForm != nullptr) activeForm->Close();
+			
+
 			//AcievateButton()
+
 			activeForm = childForm;
 			childForm->TopLevel = false;
 			childForm->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -298,8 +335,11 @@ namespace UI3 {
 			lblHeader->Text = childForm->Text;
 		}
 
+
+		System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) { OpenChildForm(gcnew frmSub1(), sender); }
+		System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { OpenChildForm(gcnew frmSub2(), sender); }
+
 #pragma endregion ProgerVods
-	
 	
 	};
 }

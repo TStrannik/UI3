@@ -1,4 +1,5 @@
 #include "frmAuth.h"
+//#include "frmSub1.h"
 
 #include <Windows.h>
 #include <iostream>
@@ -50,7 +51,7 @@ int main(array<String^>^ args) {
 // -------------------
 // ( ) Panels blocks
 // -------------------
-// ( ) Colors and fonts
+// (+) Colors and fonts
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
 // ( ) Breadcrumb

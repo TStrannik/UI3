@@ -123,15 +123,29 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="frmAuth.cpp" />
+    <ClCompile Include="frmSub1.cpp" />
+    <ClCompile Include="frmSub2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmAuth.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmSub1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmSub2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAuth.resx">
       <DependentUpon>frmAuth.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSub1.resx">
+      <DependentUpon>frmSub1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSub2.resx">
+      <DependentUpon>frmSub2.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
