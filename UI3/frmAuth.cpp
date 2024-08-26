@@ -48,14 +48,14 @@ int main(array<String^>^ args) {
 // 
 // (+) frmAuth geometry
 // (+) frmAuth Drag & Drop
-// -------------------
-// ( ) Panels blocks
-// -------------------
 // (+) Colors and fonts
+// (+) Panels blocks
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
+// // -------------------
 // ( ) Breadcrumb
-//
+// // -------------------
+// ( ) Sign In or Sign Up switch
 //
 /// BUGS:
 //
