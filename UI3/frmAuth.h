@@ -196,7 +196,7 @@ namespace UI3 {
 			   // 
 			   // button3
 			   // 
-			   this->button3->Location = System::Drawing::Point(189, 29);
+			   this->button3->Location = System::Drawing::Point(510, 3);
 			   this->button3->Name = L"button3";
 			   this->button3->Size = System::Drawing::Size(37, 35);
 			   this->button3->TabIndex = 1;
@@ -206,7 +206,7 @@ namespace UI3 {
 			   // 
 			   // button2
 			   // 
-			   this->button2->Location = System::Drawing::Point(136, 29);
+			   this->button2->Location = System::Drawing::Point(467, 3);
 			   this->button2->Name = L"button2";
 			   this->button2->Size = System::Drawing::Size(37, 35);
 			   this->button2->TabIndex = 0;
