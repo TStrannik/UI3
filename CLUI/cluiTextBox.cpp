@@ -29,7 +29,7 @@ void cluiTextBox::StartSet() {
 	PasswordChar = '*';
 	ShowPassword = false;
 
-
+	
 	BorderRadius = 10;
 	ColorLeaveBord = Color::FromArgb(255, 77, 99, 116);
 	ColorLeaveBack = Color::FromArgb(255, 34, 47, 76);

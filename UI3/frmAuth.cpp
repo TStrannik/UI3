@@ -45,15 +45,18 @@ int main(array<String^>^ args) {
 // (+) GIT Connection
 // (+) GIT Make "Develop" branch
 // 
+// (+) frmAuth geometry
+// (+) frmAuth Drag & Drop
 // -------------------
-// ( ) frmAuth geometry
+// ( ) Panels blocks
 // -------------------
 // ( ) Colors and fonts
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
+// ( ) Breadcrumb
 //
 //
 /// BUGS:
 //
+// ( ) pnlAuth: Drug&Drop coordinates
 // ( ) Component: the essence of the problem
-// ( ) 

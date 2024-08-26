@@ -19,13 +19,20 @@ using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Data;
 
+typedef enum { OnlyText, Password } fisting;
+
 
 namespace CLUI {
 	public ref class cluiTextBox : public System::Windows::Forms::UserControl
 	{
 #pragma region Fields
 
+
+		
+
 	public:
+
+		//property List<fisting> BoxType;
 		property bool	 PasswordBox;
 		property wchar_t PasswordChar;
 		property bool	 ShowPassword;
@@ -77,7 +84,7 @@ namespace CLUI {
 			   // 
 			   // txtBox
 			   // 
-			   this->txtBox->BackColor = System::Drawing::Color::White;
+			   this->txtBox->BackColor = System::Drawing::Color::WhiteSmoke;
 			   this->txtBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->txtBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
