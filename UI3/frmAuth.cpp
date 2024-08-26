@@ -44,8 +44,16 @@ int main(array<String^>^ args) {
 // (+) MVP
 // (+) GIT Connection
 // (+) GIT Make "Develop" branch
+// 
 // -------------------
-// ( ) Task
+// ( ) frmAuth geometry
 // -------------------
-// ( ) Task
-// ( ) Task
+// ( ) Colors and fonts
+// ( ) uiButton % switcher
+// ( ) Beautifull checkBox
+//
+//
+/// BUGS:
+//
+// ( ) Component: the essence of the problem
+// ( ) 
