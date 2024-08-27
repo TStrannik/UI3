@@ -64,6 +64,7 @@ namespace UI3 {
 	private: System::Windows::Forms::Label^ lblPassword;
 	private: System::Windows::Forms::Label^ lblEMail;
 	private: System::Windows::Forms::CheckBox^ cbxAgree;
+	private: System::Windows::Forms::Button^ btnSign;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -80,6 +81,11 @@ namespace UI3 {
 		   {
 			   this->components = (gcnew System::ComponentModel::Container());
 			   this->pnlAuth = (gcnew System::Windows::Forms::Panel());
+			   this->btnSign = (gcnew System::Windows::Forms::Button());
+			   this->cbxAgree = (gcnew System::Windows::Forms::CheckBox());
+			   this->lblEMail = (gcnew System::Windows::Forms::Label());
+			   this->lblPassword = (gcnew System::Windows::Forms::Label());
+			   this->lblFullName = (gcnew System::Windows::Forms::Label());
 			   this->lblHeader = (gcnew System::Windows::Forms::Label());
 			   this->cluiTextPassword = (gcnew CLUI::cluiTextBox());
 			   this->cluiTextEmail = (gcnew CLUI::cluiTextBox());
@@ -94,10 +100,6 @@ namespace UI3 {
 			   this->pic1 = (gcnew System::Windows::Forms::PictureBox());
 			   this->pnlContent = (gcnew System::Windows::Forms::Panel());
 			   this->tmrCrutch = (gcnew System::Windows::Forms::Timer(this->components));
-			   this->lblFullName = (gcnew System::Windows::Forms::Label());
-			   this->lblPassword = (gcnew System::Windows::Forms::Label());
-			   this->lblEMail = (gcnew System::Windows::Forms::Label());
-			   this->cbxAgree = (gcnew System::Windows::Forms::CheckBox());
 			   this->pnlAuth->SuspendLayout();
 			   this->pnlBreadcrumb->SuspendLayout();
 			   this->pnlBreadcrumbs->SuspendLayout();
@@ -112,6 +114,7 @@ namespace UI3 {
 			   // 
 			   this->pnlAuth->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->pnlAuth->Controls->Add(this->btnSign);
 			   this->pnlAuth->Controls->Add(this->cbxAgree);
 			   this->pnlAuth->Controls->Add(this->lblEMail);
 			   this->pnlAuth->Controls->Add(this->lblPassword);
@@ -130,6 +133,73 @@ namespace UI3 {
 			   this->pnlAuth->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseDown);
 			   this->pnlAuth->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseMove);
 			   this->pnlAuth->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseUp);
+			   // 
+			   // btnSign
+			   // 
+			   this->btnSign->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(91)), static_cast<System::Int32>(static_cast<System::Byte>(205)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(191)));
+			   this->btnSign->FlatAppearance->BorderSize = 0;
+			   this->btnSign->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->btnSign->ForeColor = System::Drawing::Color::White;
+			   this->btnSign->Location = System::Drawing::Point(102, 737);
+			   this->btnSign->Name = L"btnSign";
+			   this->btnSign->Size = System::Drawing::Size(173, 46);
+			   this->btnSign->TabIndex = 12;
+			   this->btnSign->Text = L"Sign Up";
+			   this->btnSign->UseVisualStyleBackColor = false;
+			   this->btnSign->Click += gcnew System::EventHandler(this, &frmAuth::btnSign_Click);
+			   this->btnSign->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::btnSign_Paint);
+			   // 
+			   // cbxAgree
+			   // 
+			   this->cbxAgree->AutoSize = true;
+			   this->cbxAgree->BackColor = System::Drawing::Color::Transparent;
+			   this->cbxAgree->ForeColor = System::Drawing::Color::DimGray;
+			   this->cbxAgree->Location = System::Drawing::Point(103, 633);
+			   this->cbxAgree->Name = L"cbxAgree";
+			   this->cbxAgree->Size = System::Drawing::Size(236, 25);
+			   this->cbxAgree->TabIndex = 11;
+			   this->cbxAgree->Text = L"i agree all statements in";
+			   this->cbxAgree->UseVisualStyleBackColor = false;
+			   // 
+			   // lblEMail
+			   // 
+			   this->lblEMail->AutoSize = true;
+			   this->lblEMail->BackColor = System::Drawing::Color::Transparent;
+			   this->lblEMail->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->lblEMail->ForeColor = System::Drawing::Color::White;
+			   this->lblEMail->Location = System::Drawing::Point(99, 547);
+			   this->lblEMail->Name = L"lblEMail";
+			   this->lblEMail->Size = System::Drawing::Size(80, 24);
+			   this->lblEMail->TabIndex = 10;
+			   this->lblEMail->Text = L"E-MAIL";
+			   // 
+			   // lblPassword
+			   // 
+			   this->lblPassword->AutoSize = true;
+			   this->lblPassword->BackColor = System::Drawing::Color::Transparent;
+			   this->lblPassword->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->lblPassword->ForeColor = System::Drawing::Color::White;
+			   this->lblPassword->Location = System::Drawing::Point(99, 434);
+			   this->lblPassword->Name = L"lblPassword";
+			   this->lblPassword->Size = System::Drawing::Size(126, 24);
+			   this->lblPassword->TabIndex = 9;
+			   this->lblPassword->Text = L"PASSWORD";
+			   // 
+			   // lblFullName
+			   // 
+			   this->lblFullName->AutoSize = true;
+			   this->lblFullName->BackColor = System::Drawing::Color::Transparent;
+			   this->lblFullName->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->lblFullName->ForeColor = System::Drawing::Color::White;
+			   this->lblFullName->Location = System::Drawing::Point(99, 312);
+			   this->lblFullName->Name = L"lblFullName";
+			   this->lblFullName->Size = System::Drawing::Size(124, 24);
+			   this->lblFullName->TabIndex = 8;
+			   this->lblFullName->Text = L"FULL NAME";
 			   // 
 			   // lblHeader
 			   // 
@@ -335,57 +405,6 @@ namespace UI3 {
 			   this->tmrCrutch->Enabled = true;
 			   this->tmrCrutch->Tick += gcnew System::EventHandler(this, &frmAuth::tmrCrutch_Tick);
 			   // 
-			   // lblFullName
-			   // 
-			   this->lblFullName->AutoSize = true;
-			   this->lblFullName->BackColor = System::Drawing::Color::Transparent;
-			   this->lblFullName->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->lblFullName->ForeColor = System::Drawing::Color::White;
-			   this->lblFullName->Location = System::Drawing::Point(99, 312);
-			   this->lblFullName->Name = L"lblFullName";
-			   this->lblFullName->Size = System::Drawing::Size(124, 24);
-			   this->lblFullName->TabIndex = 8;
-			   this->lblFullName->Text = L"FULL NAME";
-			   // 
-			   // lblPassword
-			   // 
-			   this->lblPassword->AutoSize = true;
-			   this->lblPassword->BackColor = System::Drawing::Color::Transparent;
-			   this->lblPassword->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->lblPassword->ForeColor = System::Drawing::Color::White;
-			   this->lblPassword->Location = System::Drawing::Point(99, 434);
-			   this->lblPassword->Name = L"lblPassword";
-			   this->lblPassword->Size = System::Drawing::Size(126, 24);
-			   this->lblPassword->TabIndex = 9;
-			   this->lblPassword->Text = L"PASSWORD";
-			   // 
-			   // lblEMail
-			   // 
-			   this->lblEMail->AutoSize = true;
-			   this->lblEMail->BackColor = System::Drawing::Color::Transparent;
-			   this->lblEMail->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->lblEMail->ForeColor = System::Drawing::Color::White;
-			   this->lblEMail->Location = System::Drawing::Point(99, 547);
-			   this->lblEMail->Name = L"lblEMail";
-			   this->lblEMail->Size = System::Drawing::Size(80, 24);
-			   this->lblEMail->TabIndex = 10;
-			   this->lblEMail->Text = L"E-MAIL";
-			   // 
-			   // cbxAgree
-			   // 
-			   this->cbxAgree->AutoSize = true;
-			   this->cbxAgree->BackColor = System::Drawing::Color::Transparent;
-			   this->cbxAgree->ForeColor = System::Drawing::Color::DimGray;
-			   this->cbxAgree->Location = System::Drawing::Point(103, 633);
-			   this->cbxAgree->Name = L"cbxAgree";
-			   this->cbxAgree->Size = System::Drawing::Size(236, 25);
-			   this->cbxAgree->TabIndex = 11;
-			   this->cbxAgree->Text = L"i agree all statements in";
-			   this->cbxAgree->UseVisualStyleBackColor = false;
-			   // 
 			   // frmAuth
 			   // 
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -516,6 +535,64 @@ namespace UI3 {
 		System::Void pic3_Click(System::Object^ sender, System::EventArgs^ e) { setPic(3, sender); }
 		System::Void pic4_Click(System::Object^ sender, System::EventArgs^ e) { setPic(4, sender); }
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
+
+		System::Void btnSign_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			Graphics^ g = e->Graphics;
+			int w = btnSign->Width - 1, h = btnSign->Height - 1, r = 20;
+			
+			StringFormat^ SF = gcnew StringFormat;
+			SF->Alignment = StringAlignment::Center;
+			SF->LineAlignment = StringAlignment::Center;
+
+			//Pen^ bdPen = gcnew Pen(BackColor);
+			Pen^ bdPen = gcnew Pen(Color::Red);
+			Brush^ bkBrush = gcnew SolidBrush(BackColor);
+			Brush^ txBrush = gcnew SolidBrush(ForeColor);
+
+			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::HighQuality;	// :AntiAlias;
+			g->Clear(btnSign->BackColor);
+			//g->Clear(Color::Transparent);
+
+
+			Drawing::Rectangle rect = Drawing::Rectangle(-1, -1, w + 2, h + 2);
+
+			LinearGradientBrush^ lgb =
+				gcnew LinearGradientBrush(
+					rect,					
+					Color::FromArgb(255, 37, 50, 68),
+					Color::FromArgb(255, 37, 50, 68),
+					90.0f
+				);
+			g->FillRectangle(lgb, rect);
+
+
+
+			if (r == 0) {
+				g->DrawRectangle(bdPen, 0, 0, w, h);
+				g->FillRectangle(bkBrush, 0, 0, w, h);
+			}
+			else {
+				Drawing2D::GraphicsPath^ gp = gcnew Drawing2D::GraphicsPath();
+
+				g->DrawLine(bdPen, r, 0, w - r, 0); g->DrawArc(bdPen, w - r * 2, 0, r * 2, r * 2, 270, 90);
+				g->DrawLine(bdPen, w, r, w, h - r); g->DrawArc(bdPen, w - r * 2, h - r * 2, r * 2, r * 2, 360, 90);
+				g->DrawLine(bdPen, w - r, h, r, h); g->DrawArc(bdPen, 0, h - r * 2, r * 2, r * 2, 90, 90);
+				g->DrawLine(bdPen, 0, h - r, 0, r); g->DrawArc(bdPen, 0, 0, r * 2, r * 2, 180, 90);
+
+				gp->AddLine(r, 0, w - r, 0);		gp->AddArc(w - r * 2, 0, r * 2, r * 2, 270, 90);
+				gp->AddLine(w, r, w, h - r);		gp->AddArc(w - r * 2, h - r * 2, r * 2, r * 2, 360, 90);
+				gp->AddLine(w - r, h, r, h);		gp->AddArc(0, h - r * 2, r * 2, r * 2, 90, 90);
+				gp->AddLine(0, h - r, 0, r);		gp->AddArc(0, 0, r * 2, r * 2, 180, 90);
+				gp->CloseFigure();
+
+				g->FillPath(bkBrush, gp);
+			}
+			g->DrawString(btnSign->Text, btnSign->Font, txBrush, (int)(w / 2), (int)(h / 2), SF);
+
+		}
+		System::Void btnSign_Click(System::Object^ sender, System::EventArgs^ e) {
+			MessageBox::Show(L"Gavka!");
+		}
 
 		System::Void tmrCrutch_Tick(System::Object^ sender, System::EventArgs^ e) { Invalidate(); tmrCrutch->Enabled = false; }
 
