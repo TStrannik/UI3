@@ -37,12 +37,12 @@ namespace UI3 {
 			// 
 			this->lblHeader->AutoSize = true;
 			this->lblHeader->BackColor = System::Drawing::Color::Transparent;
-			this->lblHeader->Font = (gcnew System::Drawing::Font(L"Tahoma", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->lblHeader->Font = (gcnew System::Drawing::Font(L"NanumGothic", 32.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Pixel,
+				static_cast<System::Byte>(0)));
 			this->lblHeader->ForeColor = System::Drawing::Color::White;
-			this->lblHeader->Location = System::Drawing::Point(134, 164);
+			this->lblHeader->Location = System::Drawing::Point(69, 214);
 			this->lblHeader->Name = L"lblHeader";
-			this->lblHeader->Size = System::Drawing::Size(393, 58);
+			this->lblHeader->Size = System::Drawing::Size(557, 76);
 			this->lblHeader->TabIndex = 2;
 			this->lblHeader->Text = L"Plan your activities and control your\r\nprogress online";
 			this->lblHeader->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -50,7 +50,7 @@ namespace UI3 {
 			// picIcon
 			// 
 			this->picIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"picIcon.BackgroundImage")));
-			this->picIcon->Location = System::Drawing::Point(24, 23);
+			this->picIcon->Location = System::Drawing::Point(41, 23);
 			this->picIcon->Name = L"picIcon";
 			this->picIcon->Size = System::Drawing::Size(38, 42);
 			this->picIcon->TabIndex = 3;
@@ -60,9 +60,9 @@ namespace UI3 {
 			// 
 			this->picHead->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"picHead.BackgroundImage")));
 			this->picHead->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->picHead->Location = System::Drawing::Point(139, 255);
+			this->picHead->Location = System::Drawing::Point(72, 361);
 			this->picHead->Name = L"picHead";
-			this->picHead->Size = System::Drawing::Size(388, 350);
+			this->picHead->Size = System::Drawing::Size(550, 401);
 			this->picHead->TabIndex = 4;
 			this->picHead->TabStop = false;
 			// 
@@ -71,7 +71,7 @@ namespace UI3 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(197)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->ClientSize = System::Drawing::Size(700, 810);
+			this->ClientSize = System::Drawing::Size(700, 925);
 			this->Controls->Add(this->picHead);
 			this->Controls->Add(this->picIcon);
 			this->Controls->Add(this->lblHeader);

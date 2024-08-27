@@ -119,6 +119,7 @@ namespace UI3 {
 			   // lblHeader
 			   // 
 			   this->lblHeader->AutoSize = true;
+			   this->lblHeader->BackColor = System::Drawing::Color::Transparent;
 			   this->lblHeader->Font = (gcnew System::Drawing::Font(L"Tahoma", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
 			   this->lblHeader->ForeColor = System::Drawing::Color::White;
@@ -246,7 +247,7 @@ namespace UI3 {
 			   this->pnlBreadcrumbs->Controls->Add(this->pic3);
 			   this->pnlBreadcrumbs->Controls->Add(this->pic2);
 			   this->pnlBreadcrumbs->Controls->Add(this->pic1);
-			   this->pnlBreadcrumbs->Location = System::Drawing::Point(215, 36);
+			   this->pnlBreadcrumbs->Location = System::Drawing::Point(289, 36);
 			   this->pnlBreadcrumbs->Name = L"pnlBreadcrumbs";
 			   this->pnlBreadcrumbs->Size = System::Drawing::Size(120, 24);
 			   this->pnlBreadcrumbs->TabIndex = 2;
@@ -501,8 +502,11 @@ namespace UI3 {
 
 		void formDrugMD(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 			if (e->Button == Windows::Forms::MouseButtons::Left) {
-				xOffset_ = -e->X - SystemInformation::FrameBorderSize.Width + 4 - sender->Left;
-				yOffset_ = -e->Y - SystemInformation::FrameBorderSize.Height + 4;
+				Control^ cont = (Control^)sender;
+				int xOffset = cont->Left; int yOffset = cont->Top;
+				if (cont->Name == Name) { xOffset = 0; yOffset = 0; }
+				xOffset_ = -e->X - SystemInformation::FrameBorderSize.Width + 4 - xOffset;
+				yOffset_ = -e->Y - SystemInformation::FrameBorderSize.Height + 4 + yOffset;
 				mouseOffset_ = System::Drawing::Point(xOffset_, yOffset_);
 				isMouseDown_ = true;
 			}

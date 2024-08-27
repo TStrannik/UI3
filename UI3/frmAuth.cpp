@@ -1,5 +1,4 @@
 #include "frmAuth.h"
-//#include "frmSub1.h"
 
 #include <Windows.h>
 #include <iostream>
@@ -53,13 +52,13 @@ int main(array<String^>^ args) {
 // (+) Gradient filling
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
-// -------------------
-// ( ) Breadcrumb
-// -------------------
+// (+) Breadcrumb
 // ( ) Sign In or Sign Up switch
 //
 /// BUGS:
 //
-// ( ) pnlAuth: Drug&Drop coordinates
+// (+) pnlAuth: Drug&Drop coordinates
+// -------------------
 // ( ) cliuTextBox: transparency
+// -------------------
 
