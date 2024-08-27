@@ -140,6 +140,8 @@ namespace UI3 {
 				   static_cast<System::Int32>(static_cast<System::Byte>(191)));
 			   this->btnSign->FlatAppearance->BorderSize = 0;
 			   this->btnSign->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			   this->btnSign->Font = (gcnew System::Drawing::Font(L"NanumGothicExtraBold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
 			   this->btnSign->ForeColor = System::Drawing::Color::White;
 			   this->btnSign->Location = System::Drawing::Point(102, 737);
 			   this->btnSign->Name = L"btnSign";
@@ -544,14 +546,13 @@ namespace UI3 {
 			SF->Alignment = StringAlignment::Center;
 			SF->LineAlignment = StringAlignment::Center;
 
-			//Pen^ bdPen = gcnew Pen(BackColor);
-			Pen^ bdPen = gcnew Pen(Color::Red);
+			Pen^ bdPen = gcnew Pen(BackColor);
 			Brush^ bkBrush = gcnew SolidBrush(BackColor);
-			Brush^ txBrush = gcnew SolidBrush(ForeColor);
+			//Brush^ txBrush = gcnew SolidBrush(ForeColor);
+			Brush^ txBrush = gcnew SolidBrush(Color::White);
 
-			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::HighQuality;	// :AntiAlias;
-			g->Clear(btnSign->BackColor);
-			//g->Clear(Color::Transparent);
+			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::HighQuality;	// :AntiAlias;i
+			g->Clear(Color::Transparent);
 
 
 			Drawing::Rectangle rect = Drawing::Rectangle(-1, -1, w + 2, h + 2);
@@ -564,6 +565,16 @@ namespace UI3 {
 					90.0f
 				);
 			g->FillRectangle(lgb, rect);
+
+
+
+			LinearGradientBrush^ lgbB =
+				gcnew LinearGradientBrush(
+					rect,
+					Color::FromArgb(255, 104, 218, 199),
+					Color::FromArgb(255, 75, 190, 181),
+					90.0f
+				);
 
 
 
@@ -585,7 +596,7 @@ namespace UI3 {
 				gp->AddLine(0, h - r, 0, r);		gp->AddArc(0, 0, r * 2, r * 2, 180, 90);
 				gp->CloseFigure();
 
-				g->FillPath(bkBrush, gp);
+				g->FillPath(lgbB, gp);
 			}
 			g->DrawString(btnSign->Text, btnSign->Font, txBrush, (int)(w / 2), (int)(h / 2), SF);
 

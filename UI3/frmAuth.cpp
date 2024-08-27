@@ -50,7 +50,7 @@ int main(array<String^>^ args) {
 // (+) Colors and fonts
 // (+) Panels blocks
 // (+) Gradient filling
-// ( ) uiButton % switcher
+// (1) uiButton % switcher
 // ( ) Beautifull checkBox
 // (+) Breadcrumb
 // ( ) Sign In or Sign Up switch
