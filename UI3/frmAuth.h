@@ -517,7 +517,7 @@ namespace UI3 {
 				mousePos.Offset(mouseOffset_.X, mouseOffset_.Y);
 				Location = mousePos;
 			}
-		}
+		} 
 		void formDrugMU(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 			if (e->Button == Windows::Forms::MouseButtons::Left) { isMouseDown_ = false; }
 		}
