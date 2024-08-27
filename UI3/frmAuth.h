@@ -372,12 +372,25 @@ namespace UI3 {
 
 	private:
 		System::Void frmAuth_Load(System::Object^ sender, System::EventArgs^ e) {
-			
+
+			/// Repos on frmAuth_paint
+
+			/*SetStyle(
+				ControlStyles::AllPaintingInWmPaint |
+				ControlStyles::OptimizedDoubleBuffer |
+				ControlStyles::ResizeRedraw |
+				ControlStyles::SupportsTransparentBackColor |
+				ControlStyles::UserPaint, true
+			);
+			DoubleBuffered = true;*/
+
+			/// TODO: block of circlement
 
 			activeForm = nullptr;
 			OpenChildForm(gcnew frmSub1(), sender);
 			BCSelN_ = 1;
 
+			
 		}
 		System::Void frmAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			SetStyle(
@@ -388,6 +401,7 @@ namespace UI3 {
 				ControlStyles::UserPaint, true
 			);
 			DoubleBuffered = true;
+			ResizeRedraw = true;
 
 
 			System::Drawing::Drawing2D::GraphicsPath^ path = gcnew System::Drawing::Drawing2D::GraphicsPath();
@@ -436,7 +450,6 @@ namespace UI3 {
 		System::Void pic3_Click(System::Object^ sender, System::EventArgs^ e) { setPic(3, sender); }
 		System::Void pic4_Click(System::Object^ sender, System::EventArgs^ e) { setPic(4, sender); }
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
-
 
 		System::Void tmrCrutch_Tick(System::Object^ sender, System::EventArgs^ e) { Invalidate(); tmrCrutch->Enabled = false; }
 

@@ -61,4 +61,6 @@ int main(array<String^>^ args) {
 // -------------------
 // ( ) cliuTextBox: transparency
 // -------------------
+// ( ) frmAuth: stairs-artefact of circlement
+// ( ) frmAuth_Load: doublebufferized block of circlement
 
