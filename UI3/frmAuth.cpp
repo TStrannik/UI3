@@ -50,7 +50,7 @@ int main(array<String^>^ args) {
 // (+) frmAuth Drag & Drop
 // (+) Colors and fonts
 // (+) Panels blocks
-// ( ) Gradient filling
+// (+) Gradient filling
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
 // -------------------
@@ -61,4 +61,5 @@ int main(array<String^>^ args) {
 /// BUGS:
 //
 // ( ) pnlAuth: Drug&Drop coordinates
-// ( ) Component: the essence of the problem
+// ( ) cliuTextBox: transparency
+

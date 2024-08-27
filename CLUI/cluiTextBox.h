@@ -225,7 +225,8 @@ namespace CLUI {
 
 
 			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::HighQuality;	// :AntiAlias;
-			g->Clear(Parent->BackColor);
+			//g->Clear(Parent->BackColor);
+			g->Clear(BackColor);
 
 
 
@@ -233,7 +234,7 @@ namespace CLUI {
 	
 
 
-
+			lblPH->BackColor  = BackColor;
 			txtBox->BackColor = BackColor;
 			mtbBox->BackColor = BackColor;
 			btnEye->BackColor = BackColor;

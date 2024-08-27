@@ -16,8 +16,11 @@ namespace UI3 {
 	protected:	~frmSub1()	   { if (components) delete components; }
 	private: System::Windows::Forms::Label^ lblHeader;
 	private: System::Windows::Forms::PictureBox^ picIcon;
+	private: System::Windows::Forms::PictureBox^ picHead;
+
+	private: System::ComponentModel::IContainer^ components;
 	protected:
-	private: System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
@@ -25,7 +28,9 @@ namespace UI3 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmSub1::typeid));
 			this->lblHeader = (gcnew System::Windows::Forms::Label());
 			this->picIcon = (gcnew System::Windows::Forms::PictureBox());
+			this->picHead = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picIcon))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picHead))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lblHeader
@@ -35,7 +40,7 @@ namespace UI3 {
 			this->lblHeader->Font = (gcnew System::Drawing::Font(L"Tahoma", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->lblHeader->ForeColor = System::Drawing::Color::White;
-			this->lblHeader->Location = System::Drawing::Point(74, 164);
+			this->lblHeader->Location = System::Drawing::Point(134, 164);
 			this->lblHeader->Name = L"lblHeader";
 			this->lblHeader->Size = System::Drawing::Size(393, 58);
 			this->lblHeader->TabIndex = 2;
@@ -51,12 +56,23 @@ namespace UI3 {
 			this->picIcon->TabIndex = 3;
 			this->picIcon->TabStop = false;
 			// 
+			// picHead
+			// 
+			this->picHead->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"picHead.BackgroundImage")));
+			this->picHead->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->picHead->Location = System::Drawing::Point(139, 255);
+			this->picHead->Name = L"picHead";
+			this->picHead->Size = System::Drawing::Size(388, 350);
+			this->picHead->TabIndex = 4;
+			this->picHead->TabStop = false;
+			// 
 			// frmSub1
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(197)),
 				static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			this->ClientSize = System::Drawing::Size(550, 810);
+			this->ClientSize = System::Drawing::Size(700, 810);
+			this->Controls->Add(this->picHead);
 			this->Controls->Add(this->picIcon);
 			this->Controls->Add(this->lblHeader);
 			this->Font = (gcnew System::Drawing::Font(L"NanumGothic", 14.25F));
@@ -67,6 +83,7 @@ namespace UI3 {
 			this->Load += gcnew System::EventHandler(this, &frmSub1::frmSub1_Load);
 			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmSub1::frmSub1_Paint);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picIcon))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picHead))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -95,6 +112,6 @@ namespace UI3 {
 			g->FillRectangle(lgb, ClientRectangle);			
 		}
 
-	
+
 	};
 }

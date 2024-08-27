@@ -1,3 +1,21 @@
+#pragma region Desctiption
+//////////////////////////////////////////////////
+///                                            ///
+/// /// ÍÓÚÓ‡ˇ ÔÓÏÓÊÂÚ ‚‡Ï ÔËÌˇÚ¸            ///
+/// ÏÓ˛ œ‡‚‰Û                                 ///
+///                                            ///
+///  1) Õ≈ œ€“¿…“≈—¡ ◊“Œ“0                     ///
+///  N3Ã≈Õ»“‹!                                 ///
+///                                            ///
+///  2) ƒ”Ã¿N“3 “ŒÀ‹ Œ Œ —≈¡≈!                 ///
+///                                            ///
+///  3) –” »                                   ///
+///                                            ///
+///  4) ƒŒ—ÃŒ“?                                ///
+///                                            ///
+//////////////////////////////////////////////////
+#pragma endregion Desctiption
+
 #include <Windows.h>
 #include "frmSub1.h"
 #include "frmSub2.h"
@@ -17,9 +35,11 @@ namespace UI3 {
 #pragma region Kernel
 	public:		frmAuth(void) { InitializeComponent(); }
 	protected: ~frmAuth()	  { if (components) delete components; }
-	private: System::Windows::Forms::Panel^ pblAuth;
+	private: System::Windows::Forms::Panel^ pnlAuth;
+	protected:
+
 	private: System::Windows::Forms::Label^ lblHeader;
-	private: System::Windows::Forms::Panel^ pnlContent;
+
 	private: System::Windows::Forms::Panel^ pnlBreadcrumb;
 
 	private: System::Windows::Forms::Button^ button1;
@@ -35,19 +55,29 @@ namespace UI3 {
 	private: System::Windows::Forms::PictureBox^ pic4;
 	private: System::Windows::Forms::PictureBox^ pic3;
 	private: System::Windows::Forms::PictureBox^ pic2;
-	private: System::ComponentModel::Container^ components;
+	private: System::Windows::Forms::Panel^ pnlContent;
+	private: System::Windows::Forms::Timer^ tmrCrutch;
+
+
+	private: System::ComponentModel::IContainer^ components;
+
+
+
+
+
+
 #pragma endregion Kernel
 
 #pragma region Windows Form Designer generated code
 		   void InitializeComponent(void)
 		   {
-			   this->pblAuth = (gcnew System::Windows::Forms::Panel());
+			   this->components = (gcnew System::ComponentModel::Container());
+			   this->pnlAuth = (gcnew System::Windows::Forms::Panel());
 			   this->lblHeader = (gcnew System::Windows::Forms::Label());
 			   this->cluiTextBox4 = (gcnew CLUI::cluiTextBox());
 			   this->cluiTextBox3 = (gcnew CLUI::cluiTextBox());
 			   this->cluiTextBox2 = (gcnew CLUI::cluiTextBox());
 			   this->button1 = (gcnew System::Windows::Forms::Button());
-			   this->pnlContent = (gcnew System::Windows::Forms::Panel());
 			   this->pnlBreadcrumb = (gcnew System::Windows::Forms::Panel());
 			   this->pnlBreadcrumbs = (gcnew System::Windows::Forms::Panel());
 			   this->pic5 = (gcnew System::Windows::Forms::PictureBox());
@@ -55,7 +85,9 @@ namespace UI3 {
 			   this->pic3 = (gcnew System::Windows::Forms::PictureBox());
 			   this->pic2 = (gcnew System::Windows::Forms::PictureBox());
 			   this->pic1 = (gcnew System::Windows::Forms::PictureBox());
-			   this->pblAuth->SuspendLayout();
+			   this->pnlContent = (gcnew System::Windows::Forms::Panel());
+			   this->tmrCrutch = (gcnew System::Windows::Forms::Timer(this->components));
+			   this->pnlAuth->SuspendLayout();
 			   this->pnlBreadcrumb->SuspendLayout();
 			   this->pnlBreadcrumbs->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pic5))->BeginInit();
@@ -65,23 +97,24 @@ namespace UI3 {
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pic1))->BeginInit();
 			   this->SuspendLayout();
 			   // 
-			   // pblAuth
+			   // pnlAuth
 			   // 
-			   this->pblAuth->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
+			   this->pnlAuth->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
-			   this->pblAuth->Controls->Add(this->lblHeader);
-			   this->pblAuth->Controls->Add(this->cluiTextBox4);
-			   this->pblAuth->Controls->Add(this->cluiTextBox3);
-			   this->pblAuth->Controls->Add(this->cluiTextBox2);
-			   this->pblAuth->Controls->Add(this->button1);
-			   this->pblAuth->Dock = System::Windows::Forms::DockStyle::Right;
-			   this->pblAuth->Location = System::Drawing::Point(550, 0);
-			   this->pblAuth->Name = L"pblAuth";
-			   this->pblAuth->Size = System::Drawing::Size(550, 810);
-			   this->pblAuth->TabIndex = 0;
-			   this->pblAuth->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseDown);
-			   this->pblAuth->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseMove);
-			   this->pblAuth->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseUp);
+			   this->pnlAuth->Controls->Add(this->lblHeader);
+			   this->pnlAuth->Controls->Add(this->cluiTextBox4);
+			   this->pnlAuth->Controls->Add(this->cluiTextBox3);
+			   this->pnlAuth->Controls->Add(this->cluiTextBox2);
+			   this->pnlAuth->Controls->Add(this->button1);
+			   this->pnlAuth->Dock = System::Windows::Forms::DockStyle::Right;
+			   this->pnlAuth->Location = System::Drawing::Point(700, 0);
+			   this->pnlAuth->Name = L"pnlAuth";
+			   this->pnlAuth->Size = System::Drawing::Size(700, 1025);
+			   this->pnlAuth->TabIndex = 0;
+			   this->pnlAuth->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::pnlAuth_Paint);
+			   this->pnlAuth->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseDown);
+			   this->pnlAuth->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseMove);
+			   this->pnlAuth->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseUp);
 			   // 
 			   // lblHeader
 			   // 
@@ -99,14 +132,14 @@ namespace UI3 {
 			   // 
 			   // cluiTextBox4
 			   // 
-			   this->cluiTextBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(82)));
 			   this->cluiTextBox4->BorderRadius = 10;
 			   this->cluiTextBox4->ColorEnterBack = System::Drawing::Color::Tomato;
 			   this->cluiTextBox4->ColorEnterBord = System::Drawing::Color::White;
 			   this->cluiTextBox4->ColorEnterText = System::Drawing::Color::White;
-			   this->cluiTextBox4->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox4->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(82)));
 			   this->cluiTextBox4->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
 			   this->cluiTextBox4->ColorLeaveText = System::Drawing::Color::White;
@@ -155,14 +188,15 @@ namespace UI3 {
 			   // 
 			   // cluiTextBox2
 			   // 
-			   this->cluiTextBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			   this->cluiTextBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			   this->cluiTextBox2->BorderRadius = 10;
 			   this->cluiTextBox2->ColorEnterBack = System::Drawing::Color::Tomato;
 			   this->cluiTextBox2->ColorEnterBord = System::Drawing::Color::White;
 			   this->cluiTextBox2->ColorEnterText = System::Drawing::Color::White;
-			   this->cluiTextBox2->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)),
-				   static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->cluiTextBox2->ColorLeaveBack = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			   this->cluiTextBox2->ColorLeaveBord = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(77)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(99)), static_cast<System::Int32>(static_cast<System::Byte>(116)));
 			   this->cluiTextBox2->ColorLeaveText = System::Drawing::Color::White;
@@ -183,23 +217,16 @@ namespace UI3 {
 			   // 
 			   // button1
 			   // 
+			   this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			   this->button1->BackColor = System::Drawing::Color::Transparent;
 			   this->button1->FlatAppearance->BorderSize = 0;
 			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->button1->Location = System::Drawing::Point(455, 3);
+			   this->button1->Location = System::Drawing::Point(608, 0);
 			   this->button1->Name = L"button1";
 			   this->button1->Size = System::Drawing::Size(92, 48);
 			   this->button1->TabIndex = 2;
-			   this->button1->UseVisualStyleBackColor = true;
+			   this->button1->UseVisualStyleBackColor = false;
 			   this->button1->Click += gcnew System::EventHandler(this, &frmAuth::button1_Click);
-			   // 
-			   // pnlContent
-			   // 
-			   this->pnlContent->Dock = System::Windows::Forms::DockStyle::Fill;
-			   this->pnlContent->Location = System::Drawing::Point(0, 0);
-			   this->pnlContent->Name = L"pnlContent";
-			   this->pnlContent->Size = System::Drawing::Size(550, 710);
-			   this->pnlContent->TabIndex = 2;
-			   this->pnlContent->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::pnlContent_Paint);
 			   // 
 			   // pnlBreadcrumb
 			   // 
@@ -207,9 +234,9 @@ namespace UI3 {
 				   static_cast<System::Int32>(static_cast<System::Byte>(185)));
 			   this->pnlBreadcrumb->Controls->Add(this->pnlBreadcrumbs);
 			   this->pnlBreadcrumb->Dock = System::Windows::Forms::DockStyle::Bottom;
-			   this->pnlBreadcrumb->Location = System::Drawing::Point(0, 710);
+			   this->pnlBreadcrumb->Location = System::Drawing::Point(0, 925);
 			   this->pnlBreadcrumb->Name = L"pnlBreadcrumb";
-			   this->pnlBreadcrumb->Size = System::Drawing::Size(550, 100);
+			   this->pnlBreadcrumb->Size = System::Drawing::Size(700, 100);
 			   this->pnlBreadcrumb->TabIndex = 2;
 			   // 
 			   // pnlBreadcrumbs
@@ -279,15 +306,28 @@ namespace UI3 {
 			   this->pic1->Click += gcnew System::EventHandler(this, &frmAuth::pic1_Click);
 			   this->pic1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::pic1_Paint);
 			   // 
+			   // pnlContent
+			   // 
+			   this->pnlContent->Dock = System::Windows::Forms::DockStyle::Fill;
+			   this->pnlContent->Location = System::Drawing::Point(0, 0);
+			   this->pnlContent->Name = L"pnlContent";
+			   this->pnlContent->Size = System::Drawing::Size(700, 925);
+			   this->pnlContent->TabIndex = 2;
+			   // 
+			   // tmrCrutch
+			   // 
+			   this->tmrCrutch->Enabled = true;
+			   this->tmrCrutch->Tick += gcnew System::EventHandler(this, &frmAuth::tmrCrutch_Tick);
+			   // 
 			   // frmAuth
 			   // 
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			   this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)), static_cast<System::Int32>(static_cast<System::Byte>(197)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(185)));
-			   this->ClientSize = System::Drawing::Size(1100, 810);
+			   this->ClientSize = System::Drawing::Size(1400, 1025);
 			   this->Controls->Add(this->pnlContent);
 			   this->Controls->Add(this->pnlBreadcrumb);
-			   this->Controls->Add(this->pblAuth);
+			   this->Controls->Add(this->pnlAuth);
 			   this->Font = (gcnew System::Drawing::Font(L"NanumGothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -301,8 +341,8 @@ namespace UI3 {
 			   this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::frmAuth_MouseDown);
 			   this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::frmAuth_MouseMove);
 			   this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::frmAuth_MouseUp);
-			   this->pblAuth->ResumeLayout(false);
-			   this->pblAuth->PerformLayout();
+			   this->pnlAuth->ResumeLayout(false);
+			   this->pnlAuth->PerformLayout();
 			   this->pnlBreadcrumb->ResumeLayout(false);
 			   this->pnlBreadcrumbs->ResumeLayout(false);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pic5))->EndInit();
@@ -331,6 +371,14 @@ namespace UI3 {
 
 	private:
 		System::Void frmAuth_Load(System::Object^ sender, System::EventArgs^ e) {
+			
+
+			activeForm = nullptr;
+			OpenChildForm(gcnew frmSub1(), sender);
+			BCSelN_ = 1;
+
+		}
+		System::Void frmAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 			SetStyle(
 				ControlStyles::AllPaintingInWmPaint |
 				ControlStyles::OptimizedDoubleBuffer |
@@ -340,14 +388,10 @@ namespace UI3 {
 			);
 			DoubleBuffered = true;
 
-			activeForm = nullptr;
-			OpenChildForm(gcnew frmSub1(), sender);
-			BCSelN_ = 1;
-		}
-		System::Void frmAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+
 			System::Drawing::Drawing2D::GraphicsPath^ path = gcnew System::Drawing::Drawing2D::GraphicsPath();
 			path->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-			int r = 10; int w = this->Width; int h = this->Height;
+			int r = 16; int w = this->Width; int h = this->Height;
 
 			path->StartFigure();
 			path->AddArc(0, 0, r, r, 180, 90);  path->AddArc(w - r, 0, r, r, 270, 90);
@@ -355,6 +399,9 @@ namespace UI3 {
 			path->CloseFigure();
 
 			this->Region = gcnew Drawing::Region(path);
+
+
+			int i = 2;
 		}
 		System::Void frmAuth_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 			if (e->KeyCode == Keys::Escape) Close();
@@ -363,6 +410,16 @@ namespace UI3 {
 		System::Void frmAuth_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) { formDrugMM(sender, e); }
 		System::Void frmAuth_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)   { formDrugMU(sender, e); }
 
+		System::Void pnlAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			Graphics^ g = e->Graphics;
+			LinearGradientBrush^ lgb =
+				gcnew LinearGradientBrush(ClientRectangle,
+					Color::FromArgb(255, 54, 76, 100),
+					Color::FromArgb(255, 33, 45,  62),
+					90.0f
+				);
+			g->FillRectangle(lgb, ClientRectangle);
+		}
 		System::Void pblAuth_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) { formDrugMD(sender, e); }
 		System::Void pblAuth_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) { formDrugMM(sender, e); }
 		System::Void pblAuth_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)	  { formDrugMU(sender, e); }
@@ -380,10 +437,7 @@ namespace UI3 {
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
 
 
-		System::Void pnlContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-
-		}
-
+		System::Void tmrCrutch_Tick(System::Object^ sender, System::EventArgs^ e) { Invalidate(); tmrCrutch->Enabled = false; }
 
 		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { Close(); }
 
@@ -401,7 +455,8 @@ namespace UI3 {
 			else			 frm = gcnew frmSub1(); // frmSub0 "Error" \ space \ holder
 
 			OpenChildForm(frm, sender);
-			pnlBreadcrumbs->Refresh(); 
+			pnlBreadcrumbs->Refresh();
+
 		}
 		void refresh_Breadcrumb(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e, unsigned int n) {
 			Graphics^ g = e->Graphics;
@@ -446,7 +501,7 @@ namespace UI3 {
 
 		void formDrugMD(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 			if (e->Button == Windows::Forms::MouseButtons::Left) {
-				xOffset_ = -e->X - SystemInformation::FrameBorderSize.Width + 4;
+				xOffset_ = -e->X - SystemInformation::FrameBorderSize.Width + 4 - sender->Left;
 				yOffset_ = -e->Y - SystemInformation::FrameBorderSize.Height + 4;
 				mouseOffset_ = System::Drawing::Point(xOffset_, yOffset_);
 				isMouseDown_ = true;
@@ -463,12 +518,7 @@ namespace UI3 {
 			if (e->Button == Windows::Forms::MouseButtons::Left) { isMouseDown_ = false; }
 		}
 
-		
-
-
 #pragma endregion ProgerVods
-	
 
-	
 	};
 }

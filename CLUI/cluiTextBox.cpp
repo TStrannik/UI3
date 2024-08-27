@@ -10,12 +10,12 @@ void cluiTextBox::StartSet() {
 		ControlStyles::OptimizedDoubleBuffer |
 		ControlStyles::ResizeRedraw |
 		ControlStyles::SupportsTransparentBackColor |
-		ControlStyles::UserPaint, true
+		ControlStyles::UserPaint |
+		ControlStyles::DoubleBuffer, true
 	);
 	DoubleBuffered = true;
 
-
-	BackColor = Color::Transparent;
+	BackColor = Color::Blue;
 	ForeColor = Color::White;
 
 
@@ -32,7 +32,7 @@ void cluiTextBox::StartSet() {
 	
 	BorderRadius = 10;
 	ColorLeaveBord = Color::FromArgb(255, 77, 99, 116);
-	ColorLeaveBack = Color::FromArgb(255, 34, 47, 76);
+	ColorLeaveBack = Color::FromArgb(255, 34, 47, 76);	
 	ColorLeaveText = Color::White;
 
 	ColorEnterBord = Color::White;
