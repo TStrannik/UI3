@@ -50,11 +50,12 @@ int main(array<String^>^ args) {
 // (+) frmAuth Drag & Drop
 // (+) Colors and fonts
 // (+) Panels blocks
+// ( ) Gradient filling
 // ( ) uiButton % switcher
 // ( ) Beautifull checkBox
-// // -------------------
+// -------------------
 // ( ) Breadcrumb
-// // -------------------
+// -------------------
 // ( ) Sign In or Sign Up switch
 //
 /// BUGS:

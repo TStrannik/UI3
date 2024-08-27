@@ -95,6 +95,7 @@ namespace UI3 {
 			   this->lblHeader->TabIndex = 1;
 			   this->lblHeader->Text = L"First form";
 			   this->lblHeader->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			   this->lblHeader->Visible = false;
 			   // 
 			   // cluiTextBox4
 			   // 
@@ -198,6 +199,7 @@ namespace UI3 {
 			   this->pnlContent->Name = L"pnlContent";
 			   this->pnlContent->Size = System::Drawing::Size(550, 710);
 			   this->pnlContent->TabIndex = 2;
+			   this->pnlContent->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::pnlContent_Paint);
 			   // 
 			   // pnlBreadcrumb
 			   // 
@@ -329,16 +331,17 @@ namespace UI3 {
 
 	private:
 		System::Void frmAuth_Load(System::Object^ sender, System::EventArgs^ e) {
-			//
+			SetStyle(
+				ControlStyles::AllPaintingInWmPaint |
+				ControlStyles::OptimizedDoubleBuffer |
+				ControlStyles::ResizeRedraw |
+				ControlStyles::SupportsTransparentBackColor |
+				ControlStyles::UserPaint, true
+			);
+			DoubleBuffered = true;
 
 			activeForm = nullptr;
-
-			//activeForm = gcnew frmSub1();
-			//OpenChildForm(activeForm, sender);
-
-
 			OpenChildForm(gcnew frmSub1(), sender);
-
 			BCSelN_ = 1;
 		}
 		System::Void frmAuth_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
@@ -377,7 +380,9 @@ namespace UI3 {
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
 
 
+		System::Void pnlContent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 
+		}
 
 
 		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { Close(); }
@@ -464,5 +469,6 @@ namespace UI3 {
 #pragma endregion ProgerVods
 	
 
+	
 	};
 }
