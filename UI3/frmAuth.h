@@ -65,6 +65,7 @@ namespace UI3 {
 	private: System::Windows::Forms::Label^ lblEMail;
 	private: System::Windows::Forms::CheckBox^ cbxAgree;
 	private: System::Windows::Forms::Button^ btnSign;
+	private: System::Windows::Forms::LinkLabel^ lnkTerms;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -81,6 +82,7 @@ namespace UI3 {
 		   {
 			   this->components = (gcnew System::ComponentModel::Container());
 			   this->pnlAuth = (gcnew System::Windows::Forms::Panel());
+			   this->lnkTerms = (gcnew System::Windows::Forms::LinkLabel());
 			   this->btnSign = (gcnew System::Windows::Forms::Button());
 			   this->cbxAgree = (gcnew System::Windows::Forms::CheckBox());
 			   this->lblEMail = (gcnew System::Windows::Forms::Label());
@@ -114,6 +116,7 @@ namespace UI3 {
 			   // 
 			   this->pnlAuth->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(58)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			   this->pnlAuth->Controls->Add(this->lnkTerms);
 			   this->pnlAuth->Controls->Add(this->btnSign);
 			   this->pnlAuth->Controls->Add(this->cbxAgree);
 			   this->pnlAuth->Controls->Add(this->lblEMail);
@@ -133,6 +136,23 @@ namespace UI3 {
 			   this->pnlAuth->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseDown);
 			   this->pnlAuth->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseMove);
 			   this->pnlAuth->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmAuth::pblAuth_MouseUp);
+			   // 
+			   // lnkTerms
+			   // 
+			   this->lnkTerms->ActiveLinkColor = System::Drawing::Color::White;
+			   this->lnkTerms->BackColor = System::Drawing::Color::Transparent;
+			   this->lnkTerms->Font = (gcnew System::Drawing::Font(L"NanumGothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->lnkTerms->LinkBehavior = System::Windows::Forms::LinkBehavior::AlwaysUnderline;
+			   this->lnkTerms->LinkColor = System::Drawing::Color::White;
+			   this->lnkTerms->Location = System::Drawing::Point(327, 660);
+			   this->lnkTerms->Name = L"lnkTerms";
+			   this->lnkTerms->Size = System::Drawing::Size(113, 28);
+			   this->lnkTerms->TabIndex = 13;
+			   this->lnkTerms->TabStop = true;
+			   this->lnkTerms->Text = L"terms of service";
+			   this->lnkTerms->VisitedLinkColor = System::Drawing::Color::White;
+			   this->lnkTerms->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::lnkTerms_Paint);
 			   // 
 			   // btnSign
 			   // 
@@ -160,7 +180,7 @@ namespace UI3 {
 			   this->cbxAgree->Font = (gcnew System::Drawing::Font(L"NanumGothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->cbxAgree->ForeColor = System::Drawing::Color::DimGray;
-			   this->cbxAgree->Location = System::Drawing::Point(103, 633);
+			   this->cbxAgree->Location = System::Drawing::Point(103, 657);
 			   this->cbxAgree->Name = L"cbxAgree";
 			   this->cbxAgree->Size = System::Drawing::Size(266, 25);
 			   this->cbxAgree->TabIndex = 11;
@@ -172,12 +192,12 @@ namespace UI3 {
 			   // 
 			   this->lblEMail->AutoSize = true;
 			   this->lblEMail->BackColor = System::Drawing::Color::Transparent;
-			   this->lblEMail->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->lblEMail->Font = (gcnew System::Drawing::Font(L"NanumGothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->lblEMail->ForeColor = System::Drawing::Color::White;
 			   this->lblEMail->Location = System::Drawing::Point(99, 547);
 			   this->lblEMail->Name = L"lblEMail";
-			   this->lblEMail->Size = System::Drawing::Size(80, 24);
+			   this->lblEMail->Size = System::Drawing::Size(74, 21);
 			   this->lblEMail->TabIndex = 10;
 			   this->lblEMail->Text = L"E-MAIL";
 			   // 
@@ -185,12 +205,12 @@ namespace UI3 {
 			   // 
 			   this->lblPassword->AutoSize = true;
 			   this->lblPassword->BackColor = System::Drawing::Color::Transparent;
-			   this->lblPassword->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->lblPassword->Font = (gcnew System::Drawing::Font(L"NanumGothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->lblPassword->ForeColor = System::Drawing::Color::White;
 			   this->lblPassword->Location = System::Drawing::Point(99, 434);
 			   this->lblPassword->Name = L"lblPassword";
-			   this->lblPassword->Size = System::Drawing::Size(126, 24);
+			   this->lblPassword->Size = System::Drawing::Size(116, 21);
 			   this->lblPassword->TabIndex = 9;
 			   this->lblPassword->Text = L"PASSWORD";
 			   // 
@@ -198,12 +218,12 @@ namespace UI3 {
 			   // 
 			   this->lblFullName->AutoSize = true;
 			   this->lblFullName->BackColor = System::Drawing::Color::Transparent;
-			   this->lblFullName->Font = (gcnew System::Drawing::Font(L"NanumGothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->lblFullName->Font = (gcnew System::Drawing::Font(L"NanumGothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->lblFullName->ForeColor = System::Drawing::Color::White;
 			   this->lblFullName->Location = System::Drawing::Point(99, 312);
 			   this->lblFullName->Name = L"lblFullName";
-			   this->lblFullName->Size = System::Drawing::Size(124, 24);
+			   this->lblFullName->Size = System::Drawing::Size(114, 21);
 			   this->lblFullName->TabIndex = 8;
 			   this->lblFullName->Text = L"FULL NAME";
 			   // 
@@ -241,7 +261,7 @@ namespace UI3 {
 			   this->cluiTextPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->cluiTextPassword->ForeColor = System::Drawing::Color::White;
-			   this->cluiTextPassword->Location = System::Drawing::Point(103, 463);
+			   this->cluiTextPassword->Location = System::Drawing::Point(103, 468);
 			   this->cluiTextPassword->Name = L"cluiTextPassword";
 			   this->cluiTextPassword->PasswordBox = true;
 			   this->cluiTextPassword->PasswordChar = '*';
@@ -269,7 +289,7 @@ namespace UI3 {
 			   this->cluiTextEmail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->cluiTextEmail->ForeColor = System::Drawing::Color::White;
-			   this->cluiTextEmail->Location = System::Drawing::Point(103, 577);
+			   this->cluiTextEmail->Location = System::Drawing::Point(103, 582);
 			   this->cluiTextEmail->Name = L"cluiTextEmail";
 			   this->cluiTextEmail->PasswordBox = false;
 			   this->cluiTextEmail->PasswordChar = '*';
@@ -542,6 +562,11 @@ namespace UI3 {
 		System::Void pic4_Click(System::Object^ sender, System::EventArgs^ e) { setPic(4, sender); }
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
 
+		System::Void lnkTerms_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+			int w = lnkTerms->Width - 1, h = lnkTerms->Height - 1;
+			Graphics^ g = e->Graphics;
+			g->DrawLine(gcnew Pen(Color::FromArgb(0, 20, 217, 178), 2.0f), 4, h , w - 4, h);
+		}
 		System::Void cbxAgree_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 #pragma region Settings
 			Graphics^ g = e->Graphics;
@@ -761,6 +786,7 @@ namespace UI3 {
 
 #pragma endregion ProgerVods
 
+	
 	
 	};
 }
