@@ -154,15 +154,19 @@ namespace UI3 {
 			   // 
 			   // cbxAgree
 			   // 
-			   this->cbxAgree->AutoSize = true;
 			   this->cbxAgree->BackColor = System::Drawing::Color::Transparent;
+			   this->cbxAgree->Checked = true;
+			   this->cbxAgree->CheckState = System::Windows::Forms::CheckState::Checked;
+			   this->cbxAgree->Font = (gcnew System::Drawing::Font(L"NanumGothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
 			   this->cbxAgree->ForeColor = System::Drawing::Color::DimGray;
 			   this->cbxAgree->Location = System::Drawing::Point(103, 633);
 			   this->cbxAgree->Name = L"cbxAgree";
-			   this->cbxAgree->Size = System::Drawing::Size(236, 25);
+			   this->cbxAgree->Size = System::Drawing::Size(266, 25);
 			   this->cbxAgree->TabIndex = 11;
 			   this->cbxAgree->Text = L"i agree all statements in";
 			   this->cbxAgree->UseVisualStyleBackColor = false;
+			   this->cbxAgree->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmAuth::cbxAgree_Paint);
 			   // 
 			   // lblEMail
 			   // 
@@ -538,7 +542,72 @@ namespace UI3 {
 		System::Void pic4_Click(System::Object^ sender, System::EventArgs^ e) { setPic(4, sender); }
 		System::Void pic5_Click(System::Object^ sender, System::EventArgs^ e) { setPic(5, sender); }
 
+		System::Void cbxAgree_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+#pragma region Settings
+			Graphics^ g = e->Graphics;
+
+			int w = cbxAgree->Width - 1, h = cbxAgree->Height - 1, r = 4;
+
+			StringFormat^ SF = gcnew StringFormat;
+			SF->Alignment = StringAlignment::Near;
+			SF->LineAlignment = StringAlignment::Near;
+
+			Pen^	 chPen = gcnew Pen(Color::FromArgb(255, 38, 81, 91), 2.0f);
+			Pen^	 bdPen = gcnew Pen(Color::FromArgb(255, 20, 217, 178));
+			Brush^ bkBrush = gcnew SolidBrush(Color::FromArgb(255, 20 , 217, 178));
+			Brush^ txBrush = gcnew SolidBrush(Color::FromArgb(255, 115, 125, 137));
+
+			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::AntiAlias;	// :AntiAlias;HighQuality;	
+			g->Clear(Color::Transparent);
+#pragma endregion
+
+#pragma region Fill All
+			Drawing::Rectangle rect = Drawing::Rectangle(-1, -1, w + 2, h + 2);
+
+			LinearGradientBrush^ lgb =
+				gcnew LinearGradientBrush(
+					rect,
+					Color::FromArgb(255, 41, 55, 74),
+					Color::FromArgb(255, 41, 55, 74),
+					90.0f
+				);
+			g->FillRectangle(lgb, rect);
+#pragma endregion
+
+#pragma region Fill Squard
+			LinearGradientBrush^ lgbB =
+				gcnew LinearGradientBrush(
+					rect,
+					Color::FromArgb(255, 20, 217, 178),
+					Color::FromArgb(255, 20, 217, 178),
+					90.0f
+				);
+
+			Drawing2D::GraphicsPath^ gp = gcnew Drawing2D::GraphicsPath();
+
+			g->DrawLine(bdPen, 20, r, 20, 20 - r); g->DrawArc(bdPen, 20 - r * 2, 20 - r * 2, r * 2, r * 2, 360, 90);
+			g->DrawLine(bdPen, 20 - r, 20, r, 20); g->DrawArc(bdPen, 0, 20 - r * 2, r * 2, r * 2, 90, 90);
+			g->DrawLine(bdPen, 0, 20 - r, 0, r);   g->DrawArc(bdPen, 0, 0, r * 2, r * 2, 180, 90);
+
+			gp->AddLine(r, 0, 20 - r, 0);		   gp->AddArc(20 - r * 2, 0, r * 2, r * 2, 270, 90);
+			gp->AddLine(20, r, 20, 20 - r);		   gp->AddArc(20 - r * 2, 20 - r * 2, r * 2, r * 2, 360, 90);
+			gp->AddLine(20 - r, 20, r, 20);		   gp->AddArc(0, 20 - r * 2, r * 2, r * 2, 90, 90);
+			gp->AddLine(0, 20 - r, 0, r);	       gp->AddArc(0, 0, r * 2, r * 2, 180, 90);
+			gp->CloseFigure();
+
+			g->FillPath(lgbB, gp);
+
+			if (cbxAgree->Checked) {
+				g->DrawLine(chPen, 3, 10, 8, 15); g->DrawLine(chPen, 8, 15, 18, 6);
+			}
+#pragma endregion
+
+#pragma region Text
+			g->DrawString(cbxAgree->Text, cbxAgree->Font, txBrush, 34, 2, SF);
+#pragma endregion
+		}
 		System::Void btnSign_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+#pragma region Settings
 			Graphics^ g = e->Graphics;
 			int w = btnSign->Width - 1, h = btnSign->Height - 1, r = 20;
 			
@@ -546,15 +615,16 @@ namespace UI3 {
 			SF->Alignment = StringAlignment::Center;
 			SF->LineAlignment = StringAlignment::Center;
 
-			Pen^ bdPen = gcnew Pen(BackColor);
+			Pen^ bdPen = gcnew Pen(Color::FromArgb(255, 115, 125, 137));
 			Brush^ bkBrush = gcnew SolidBrush(BackColor);
-			//Brush^ txBrush = gcnew SolidBrush(ForeColor);
 			Brush^ txBrush = gcnew SolidBrush(Color::White);
 
-			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::HighQuality;	// :AntiAlias;i
+			g->SmoothingMode = System::Drawing::Drawing2D::SmoothingMode::AntiAlias;	// :AntiAlias;HighQuality;
+
 			g->Clear(Color::Transparent);
+#pragma endregion
 
-
+#pragma region Fill All
 			Drawing::Rectangle rect = Drawing::Rectangle(-1, -1, w + 2, h + 2);
 
 			LinearGradientBrush^ lgb =
@@ -565,9 +635,9 @@ namespace UI3 {
 					90.0f
 				);
 			g->FillRectangle(lgb, rect);
+#pragma endregion 
 
-
-
+#pragma region Fill Button
 			LinearGradientBrush^ lgbB =
 				gcnew LinearGradientBrush(
 					rect,
@@ -575,7 +645,6 @@ namespace UI3 {
 					Color::FromArgb(255, 75, 190, 181),
 					90.0f
 				);
-
 
 
 			if (r == 0) {
@@ -598,15 +667,16 @@ namespace UI3 {
 
 				g->FillPath(lgbB, gp);
 			}
+#pragma endregion
+
+#pragma region Text
 			g->DrawString(btnSign->Text, btnSign->Font, txBrush, (int)(w / 2), (int)(h / 2), SF);
+#pragma endregion
 
 		}
-		System::Void btnSign_Click(System::Object^ sender, System::EventArgs^ e) {
-			MessageBox::Show(L"Gavka!");
-		}
+		System::Void btnSign_Click(System::Object^ sender, System::EventArgs^ e) { MessageBox::Show(L"Gavka!");	}
 
 		System::Void tmrCrutch_Tick(System::Object^ sender, System::EventArgs^ e) { Invalidate(); tmrCrutch->Enabled = false; }
-
 		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { Close(); }
 
 #pragma endregion Voids
@@ -691,5 +761,6 @@ namespace UI3 {
 
 #pragma endregion ProgerVods
 
+	
 	};
 }

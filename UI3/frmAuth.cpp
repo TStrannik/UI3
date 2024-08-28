@@ -51,16 +51,17 @@ int main(array<String^>^ args) {
 // (+) Panels blocks
 // (+) Gradient filling
 // (1) uiButton % switcher
+// -------------------
 // ( ) Beautifull checkBox
+// -------------------
 // (+) Breadcrumb
 // ( ) Sign In or Sign Up switch
 //
 /// BUGS:
 //
 // (+) pnlAuth: Drug&Drop coordinates
-// -------------------
-// ( ) cliuTextBox: transparency
-// -------------------
+
+// (+) cliuTextBox: transparency
 // ( ) frmAuth: stairs-artefact of circlement
 // ( ) frmAuth_Load: doublebufferized block of circlement
 
